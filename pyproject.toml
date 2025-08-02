@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mem0-history-db-patch"
+version = "1.0.0"
+description = "SQLAlchemy-based database backend patch for mem0 memory storage"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Nocyphr", email = "sgu@nocyphr.com"}
+]
+maintainers = [
+    {name = "Nocyphr", email = "sgu@nocyphr.com"}
+]
+keywords = ["mem0", "sqlite", "postgres", "sqlalchemy", "patch", "memory"]
+requires-python = ">=3.8"
+dependencies = [
+    "mem0ai>=0.1.0",
+    "sqlalchemy>=2.0.0"
+]
+
+[project.urls]
+Homepage = "https://github.com/nocyphr/mem0-history-db-patch"
+Repository = "https://github.com/nocyphr/mem0-history-db-patch"
+
+[tool.setuptools]
+include-package-data = true
+zip-safe = false
+packages = ["mem0.memory"]
+
