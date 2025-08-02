@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "mem0-history-db-patch"
-version = "1.0.2"
+version = "1.0.3"
 description = "SQLAlchemy-based database backend patch for mem0 memory storage"
 readme = "README.md"
 license = {text = "MIT"}

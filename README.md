@@ -46,15 +46,16 @@ This overrides `mem0.memory.storage` with your patched version while keeping all
 You don't need to change how you use `mem0`. Just point it at a database of your choice:
 
 ```python
-from mem0.memory.storage import SQLiteManager  # Still called that for compatibility
+memory_config = MemoryConfig(
+    vector_store=vconfig,
+    embedder=embedconfig,
+    llm=llmconfig,
+    version="v2",
+    history_db_path="postgresql://mem0:supersecret@postgres:5432/mem0db",
+    # history_db_path="sqlite:///./my/custom/history/path/that/exists/history.db",  # or just keep using sqlite but then why would you install this patch :D
+)
 
-db = SQLiteManager(db_url="postgresql://user:pass@localhost:5432/mem0")  # this db url is what you would insert into your history_db_path config in mem0
-```
-
-For SQLite (default, still supported):
-
-```python
-db = SQLiteManager()  # Uses sqlite:///:memory: by default
+memory = AsyncMemory(config=memory_config)
 ```
 
 ---
