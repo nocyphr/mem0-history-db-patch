@@ -40,7 +40,7 @@ class History(Base):
 
 
 class SQLiteManager:
-    def __init__(self, db_url: str = "sqlite:///:memory:"):
+    def __init__(self, db_url: str = "sqlite:///./history.db"):
         self.db_url = db_url
         self._is_sqlite = make_url(self.db_url).get_backend_name() == "sqlite"
         self.engine = create_engine(
