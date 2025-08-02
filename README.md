@@ -1,7 +1,8 @@
 # mem0-history-db-patch
 
 This patch replaces the default SQLite-only memory storage layer in the Python SDK of [`mem0`](https://github.com/mem0ai/mem0) with a flexible, SQLAlchemy-based implementation that supports other databases — including PostgreSQL, Supabase, and more.
-
+![](imgs/postgres_stored_memory.png)
+![](imgs/sqlite3_stored_memory.png)
 > 🔧 **Why?**  
 The official Node.js SDK for `mem0` already supports robust production databases (like Postgres and Supabase) for the history store. However, the Python SDK is currently limited to SQLite — which:
 - Only allows one writer at a time (`threading.Lock()` is used to compensate),
